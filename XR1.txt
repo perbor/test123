@@ -1,0 +1,28 @@
+hostname XR1
+cdp
+line console
+ exec-timeout 0 0
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface GigabitEthernet0/0/0/0
+ cdp
+ no shut
+!
+interface GigabitEthernet0/0/0/0.519
+ ipv4 address 20.5.19.19 255.255.255.0
+ dot1q vlan 519
+!
+interface GigabitEthernet0/0/0/0.619
+ ipv4 address 20.6.19.19 255.255.255.0
+ dot1q vlan 619
+!
+interface GigabitEthernet0/0/0/0.1920
+ ipv4 address 10.19.20.19 255.255.255.0
+ dot1q vlan 1920
+!
+commit
+
+end
+
